@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import com.mysql.jdbc.PreparedStatement;
+
 
 public class DBConnect 
 {
@@ -19,13 +19,12 @@ public class DBConnect
 		// TODO Auto-generated catch block
 		e1.printStackTrace();
 	}
-	//se connecter au serveur avec  la base de donn�es
-	String url="jdbc:mysql://127.0.0.1/dictionnaire";
+	//se connecter au serveur avec  la base de données
+	String url="jdbc:mysql://127.0.0.1:3306/etudiant";
 	String user="root";
 	String pass="";
 	try {
 		con=DriverManager.getConnection(url,user,pass);
-                
 	} catch (SQLException e) 
 	{
 	e.printStackTrace();
