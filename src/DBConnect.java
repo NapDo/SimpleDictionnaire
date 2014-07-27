@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 
 public class DBConnect 
@@ -20,13 +21,14 @@ public class DBConnect
 		e1.printStackTrace();
 	}
 	//se connecter au serveur avec  la base de données
-	String url="jdbc:mysql://127.0.0.1:3306/etudiant";
+	String url="jdbc:mysql://127.0.0.1:3306/dictionnaire";
 	String user="root";
 	String pass="";
 	try {
 		con=DriverManager.getConnection(url,user,pass);
 	} catch (SQLException e) 
 	{
+            JOptionPane.showMessageDialog(null,"Impossible de se connecter à la BDD");
 	e.printStackTrace();
 	}
 	//l'objet qui permet d'executer les requete sql

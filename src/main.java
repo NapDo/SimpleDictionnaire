@@ -1,4 +1,7 @@
-
+/* Author: NapDo
+Description: Projet dictionnaire enligne
+*free*
+*/
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -14,7 +17,7 @@ public class main  {
                 recherche fen= new recherche();
                   fen.setVisible(true);
      
-		JLabel image=new JLabel(new ImageIcon("esto.jpg"));
+		JLabel image=new JLabel(new ImageIcon("x.jpg"));
 	}
 
 

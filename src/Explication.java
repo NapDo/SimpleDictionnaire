@@ -9,29 +9,29 @@ public class Explication extends JFrame
     Explication(String mot, String synonyme, String descrip, String traductionAnglais) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-	public enum Sport {
-	    TENNIS,
-	    FOOTBALL,
-	    NATATION,
-	    RIEN;
+	public enum Dictionnaire {
+	    Nom,
+	    Explications,
+	    Image,
+	    Traduction;
 	}
 	public Explication() {
         super();
  
-        setTitle("JTable basique dans un JScrollPane");
+        setTitle("Dictionnaire TABLE TEST");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
         Object[][] donnees = {
-                {"Johnathan", "Sykes", Color.red, true, Sport.TENNIS},
-                {"Nicolas", "Van de Kampf", Color.black, true, Sport.FOOTBALL},
-                {"Damien", "Cuthbert", Color.cyan, true, Sport.RIEN},
-                {"Corinne", "Valance", Color.blue, false, Sport.NATATION},
-                {"Emilie", "Schr�dinger", Color.magenta, false, Sport.FOOTBALL},
-                {"Delphine", "Duke", Color.yellow, false, Sport.TENNIS},
-                {"Eric", "Trump", Color.pink, true, Sport.FOOTBALL},
+                {"test", "", Color.red, true, Dictionnaire.Nom},
+                {"tets", "", Color.black, true, Dictionnaire.Explications},
+                {"tesd", "", Color.cyan, true, Dictionnaire.Image},
+                {"", "", Color.blue, false, Dictionnaire.Image},
+                {"", "", Color.magenta, false, Dictionnaire.Nom},
+                {"e", "", Color.yellow, false, Dictionnaire.Explications},
+                {"", "", Color.pink, true, Dictionnaire.Nom},
         };
  
-        String[] entetes = {"Pr�nom", "Nom", "Couleur favorite", "Homme", "Sport"};
+        String[] entetes = {"Nom", "Image", "Explications", "TraductionAr", "TraductionEn"};
  
         JTable tableau = new JTable(donnees, entetes);
  

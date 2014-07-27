@@ -1,15 +1,12 @@
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
 
 import javax.swing.*;
 
 public class recherche extends JFrame implements ActionListener {
 
-    private JButton b1, b2, b3, b4;
+    private  JButton b1, b2, b3, b4;
     private JTextField t1;
     private Choice c1;
 
@@ -24,9 +21,9 @@ public class recherche extends JFrame implements ActionListener {
         Container c = getContentPane();
         c.setLayout(null);
         Font police = new Font("arial", Font.BOLD, 18);
-        Image icon = Toolkit.getDefaultToolkit().getImage("esto.jpg");
+        Image icon = Toolkit.getDefaultToolkit().getImage("x.jpg");
         this.setIconImage(icon);
-        JLabel image = new JLabel(new ImageIcon("esto.jpg"));
+        JLabel image = new JLabel(new ImageIcon("x.jpg"));
         JPanel pan = new JPanel();
         c.add(image);
 
@@ -63,18 +60,21 @@ public class recherche extends JFrame implements ActionListener {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+    
 
     @Override
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == b2) {
-            String s = JOptionPane.showInputDialog(this, "Veuillez entrer NapDo");
-         
+          
+             String s = JOptionPane.showInputDialog(this, "Veuillez entrer NapDo");
+          
             try {
                 DBConnect db = new DBConnect();
 
               MotR m = db.rechercher("select * from traductionfr where Mot ='" + s + "'");
-           
+             if(m != null && MotR.getMot != null)
+             {
                         if (!m.getMot().equals("")) 
                         {
                             hide();
@@ -83,16 +83,21 @@ public class recherche extends JFrame implements ActionListener {
                             new Explication(m.getMot(), m.getSynonyme(), m.getDescrip(), m.getTraductionAnglais()).setVisible(true);
                             System.out.println("Marche");
           	}
+                        else{
+                            JOptionPane.showMessageDialog(null,"Mot pas trouvé");
+                        }
+             
 		}
-             catch (Exception ee) 
+            
+            }catch (Exception ee) 
                     {
-                System.out.println("Marche pas");
-                JOptionPane.showMessageDialog(this, "pas trouve");
-                ee.printStackTrace();
+                
+            
 
-            }
-        
+            
+                    }
 }
     }
+    }
 
-}
+
