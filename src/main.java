@@ -14,7 +14,7 @@ public class main  {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
             System.out.println("Attention Application pas encore finis #NapDo");
-                recherche fen= new recherche();
+                Recherche fen= new Recherche();
                   fen.setVisible(true);
      
 		JLabel image=new JLabel(new ImageIcon("x.jpg"));
